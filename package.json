@@ -1,0 +1,30 @@
+{
+  "name": "linear-mcp-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bin": {
+    "weather": "./build/index.js"
+  },
+  "scripts": {
+    "build": "tsc && node -e \"require('fs').chmodSync('build/index.js', '755')\"",
+    "start": "npm run build && node build/index.js"
+  },
+  "files": [
+    "build"
+  ],
+  "dependencies": {
+    "@linear/sdk": "^38.0.0",
+    "@modelcontextprotocol/sdk": "^1.6.1",
+    "dotenv": "^16.4.7",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "typescript": "^5.8.2"
+  }
+}
